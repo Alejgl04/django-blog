@@ -11,8 +11,11 @@ DEBUG = 'RENDER' not in os.environ
 
 # print(env)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=['*']
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -30,7 +33,8 @@ INSTALLED_APPS = [
     'theme',    
     
     'newsletters',
-    'dashboard'
+    'dashboard',
+
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -73,6 +77,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+# WSGI_APPLICATION = 'wsgi.application'
+
+
 
 
 # Database
