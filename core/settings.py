@@ -41,14 +41,16 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
-# NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
-NPM_BIN_PATH = "/usr/local/bin/npm"
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+# NPM_BIN_PATH = "/usr/local/bin/npm"
+
+TAILWIND_CSS_PATH = 'css/dist/styles.css'
 
 EMAIL_BACKEND  = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
